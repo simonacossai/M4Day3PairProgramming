@@ -5,7 +5,7 @@ from the one of the .json book files we gave you yesterday)
 */
 
 import React from 'react';
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Col, Card } from "react-bootstrap";
 import MyBadge from '../MyBadge/MyBadge';
 import './SingleBook.css';
 
