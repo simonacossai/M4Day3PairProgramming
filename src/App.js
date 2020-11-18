@@ -1,12 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import MyBadge from './components/MyBadge/MyBadge';
 import Booklist from './components/BookList/BookList';
-import WarningSign from './components/WarningSign';
+import WarningSign from './components/WarningSign/WarningSign';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   return (
      <>
+      <Navbar title="Strive"/>
       <Booklist />
       <WarningSign />
      </>
