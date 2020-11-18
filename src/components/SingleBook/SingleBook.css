@@ -1,0 +1,20 @@
+.books-image{
+    object-fit: cover;
+    height: 350px;
+}
+.title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.card{
+    border-bottom: 6px solid #720026;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
+}
+#dropdown-basic-button{
+    background-color: #720026!important;
+    border: 2px solid #720026!important;
+    color: #ffff;
+    padding:7px;
+    border-radius:4px;
+}
