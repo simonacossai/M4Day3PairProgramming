@@ -3,14 +3,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Alert, Container } from "react-bootstrap";
 
 class MyAlert extends Component {
-  state = {
-    visible: true
-  }
+
   toggle() {
     this.setState({
       visible: !this.state.visible
     })
   }
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: props.text,
+      visible: true
+    };
+}
   render() {
     return (
       <>
@@ -18,7 +23,7 @@ class MyAlert extends Component {
           {this.state.visible === true && <Alert variant="danger" onClose={() => this.toggle(false)} dismissible>
             <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
             <p>
-              This is an error message!
+            {this.state.text}
         </p>
           </Alert>}
         </Container>

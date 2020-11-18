@@ -9,7 +9,7 @@ function App() {
      <>
       <Navbar title="Strive"/>
       <Booklist />
-      <WarningSign />
+      <WarningSign text="Oh no! Your book isn't here" />
      </>
   );
 }

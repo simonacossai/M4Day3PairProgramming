@@ -17,18 +17,18 @@ class SingleBook extends React.Component {
             selected: false,
         };
     }
+
     select = () => {
         this.setState({
-            selected: this.state.selected == false ? true : false,
+            selected: !this.state.selected 
         });
-        console.log(this.state.selected);
     };
+
     render() {
         return (
-
             <>
                 <Col className="mt-3" xs={4}>
-                    <Card style={{ width: '18rem' }} onClick={(e) => this.select()} style={this.state.selected === true ? { border: "2px solid rgba(0,0,0,0.4)" } : { border: null }} className="card">
+                    <Card style={{ width: '18rem' }} className="card" onClick={(e) => this.select()} style={this.state.selected === true ? { border: "2px solid rgba(0,0,0,0.4)" } : { border: null }} >
                         <Card.Img variant="top" src={this.state.book.img} className="books-image" />
                         <Card.Body>
                             <Card.Title className="title" >{this.state.book.title}</Card.Title>
