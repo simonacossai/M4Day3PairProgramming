@@ -10,7 +10,6 @@ import MyBadge from '../MyBadge/MyBadge';
 import './SingleBook.css';
 
 const SingleBook = (props) => {
-    console.log(props);
     return (
         <> 
                 <Col className="mt-3">
