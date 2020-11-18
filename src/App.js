@@ -6,7 +6,6 @@ import Booklist from './components/BookList/BookList';
 function App() {
   return (
      <>
-      <MyBadge text="hello" colour="success"></MyBadge>
       <Booklist />
      </>
   );
