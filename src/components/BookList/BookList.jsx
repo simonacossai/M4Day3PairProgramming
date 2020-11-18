@@ -8,7 +8,7 @@ class BookList extends React.Component {
         books: romance,
     }
 
-    handleSearchQuery = (query) => {
+    searchBooks = (query) => {
         if (query) {
             let filteredBooks = this.state.books.filter((book) =>
                 book.title.toLowerCase().includes(query.toLowerCase())
@@ -30,7 +30,7 @@ class BookList extends React.Component {
                             className="ml-3"
                             style={{ width: "300px" }}
                             aria-describedby="basic-addon1"
-                            onChange={(e) => this.handleSearchQuery(e.target.value)}
+                            onChange={(e) => this.searchBooks(e.target.value)}
                         />
                     </div>
                     <hr className="my-2" />
