@@ -1,6 +1,8 @@
 import React from 'react';
-import { Col, Card, Button, FormControl } from "react-bootstrap";
+import { Col, Card, Button, FormControl, Badge } from "react-bootstrap";
 import './CommentListItem.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { BsPencil,BsTrash } from 'react-icons/bs';
 
 class CommentListItem extends React.Component {
 
@@ -10,7 +12,7 @@ class CommentListItem extends React.Component {
            comment: "",
         };
         deleteComment=async()=>{
-            const res = await fetch("https://striveschool-api.herokuapp.com/api/comments/"+this.props.comment._id,{
+            const res = await fetch("https://striveschool-api.herokuapp.com/api/comments/"+ this.props.comment._id,{
                 headers: new Headers({
                     "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZmI2YzMzMzk4MzViMDAwMTc1ODRmYTciLCJpYXQiOjE2MDU4MTMwNDMsImV4cCI6MTYwNzAyMjY0M30.i8M58Iu5HLuzDGj0-aElzPhilaoSKG3Ma9eTqn3kpd4",
                 }),
@@ -58,18 +60,16 @@ class CommentListItem extends React.Component {
                 onChange={(e)=>this.setState({rate: e.currentTarget.value})}></FormControl>
                 <FormControl value={this.state.comment} 
                 onChange={(e)=>this.setState({comment: e.currentTarget.value})}></FormControl>
-                <Button variant="primary" onClick={this.updateComment} className="submit">submit</Button>
+                <Button variant="primary" onClick={this.updateComment}>submit</Button>
                 </>              
                 :
-                <>
-                {this.props.comment.rate} -> {this.props.comment.comment} 
+                <> 
+                <Badge className="badge">{this.props.comment.rate}</Badge> {this.props.comment.comment} 
+                <Button variant="secondary" onClick={this.editComment} className="edit"> <BsPencil /></Button>
+                <Button variant="danger" onClick={this.deleteComment} className="delete"><BsTrash/></Button>
               </>
             }
-            <Button variant="secondary" onClick={this.editComment} className="edit">edit</Button>
-            <Button variant="danger" onClick={this.deleteComment} className="delete">x</Button>
-         </li>
-
-           
+         </li>       
         )
     }
 };

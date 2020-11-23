@@ -5,7 +5,7 @@ from the one of the .json book files we gave you yesterday)
 */
 
 import React from 'react';
-import { Col, Card } from "react-bootstrap";
+import { Row, Col, Card } from "react-bootstrap";
 import MyBadge from '../MyBadge/MyBadge';
 import './SingleBook.css';
 import CommentList from '../CommentList';
@@ -23,8 +23,9 @@ class SingleBook extends React.Component {
     render() {
         return (
             <>
+            <Row>
                 <Col className="mt-3" md={4}>
-                    <Card style={{ width: '18rem' }} className="card"  style={this.state.selected === true ? { border: "2px solid rgba(0,0,0,0.4)" } : { border: null }} >
+                    <Card style={{ width: '18rem' }} className="card" onClick={()=>this.setState({selected: !this.state.selected})} style={this.state.selected === true ? { border: "2px solid rgba(0,0,0,0.4)" } : { border: null }} >
                         <Card.Img variant="top" src={this.state.book.img} className="books-image" />
                         <Card.Body>
                             <p>{this.state.id}</p>
@@ -33,10 +34,16 @@ class SingleBook extends React.Component {
                                 <MyBadge text={this.state.book.category} colour="success"></MyBadge>
                                 <small className="text-muted">${this.state.book.price}</small>
                             </div>
-                            <CommentList comments={this.state.comments} bookId={this.props.book.asin} onNewComment={this.onNewComment} onDeleteComment={this.onDeleteComment} updateComment={this.updateComment}/>
                         </Card.Body>
                     </Card>
                 </Col>
+                <Col>
+                {this.state.selected ?
+                 <CommentList comments={this.state.comments} bookId={this.props.book.asin} onNewComment={this.onNewComment} onDeleteComment={this.onDeleteComment} updateComment={this.updateComment}/>
+                : <Row></Row>
+                
+                } </Col>
+                </Row>
             </>
         )
     }

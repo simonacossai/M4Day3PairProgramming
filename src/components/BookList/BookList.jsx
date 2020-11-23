@@ -2,7 +2,6 @@ import React from 'react';
 import { Container, Row, Col, Card, FormControl } from "react-bootstrap";
 import romance from '../../data/romance.json';
 import SingleBook from '../SingleBook/SingleBook';
-import AddComment from '../CommentArea/AddComment';
 
 class BookList extends React.Component {
     state = {
@@ -36,12 +35,13 @@ class BookList extends React.Component {
                             onChange={(e) => this.searchBooks(e.target.value)}
                         />
                     </div>
-                    <AddComment />
                     <hr className="my-2" />
                     <Row className="justify-content-start mt-3">
+                        <Col>
                         {this.state.books.map((romance) => (
                             <SingleBook book={romance} key={romance.asin} />
                         ))}
+                        </Col>
                     </Row>
                 </Container>
             </div>

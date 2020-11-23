@@ -12,12 +12,15 @@ class CommentList extends React.Component {
 
     render() {
         return (
+            
             <>
             <FormControl value={this.state.commentFilter} onChange={(e)=>this.setState({commentFilter: e.currentTarget.value.toLowerCase()})}></FormControl>
               <ul>
-                  {this.props.comments && this.props.comments
+                  {this.props.comments ? this.props.comments
                   .filter(comment=> comment.comment.toLowerCase().indexOf(this.state.commentFilter)!== -1)
-                  .map(comment => <CommentListItem key={comment._id} comment={comment} onDeleteComment={this.props.onDeleteComment} updateComment={this.props.updateComment}/>)}
+                  .map(comment => <CommentListItem key={comment._id} comment={comment} onDeleteComment={this.props.onDeleteComment} />)
+                  :
+                  <h3>No comments here</h3>}
               </ul>  
             <CommentCreator bookId={this.props.bookId} onNewComment={this.props.onNewComment}  />
             </>

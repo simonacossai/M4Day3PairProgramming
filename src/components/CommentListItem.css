@@ -1,10 +1,24 @@
 .delete{
     border-radius: 50%!important;
     background-color: transparent!important;
+    padding: 5px 9px 8px 9px;
     color: red!important;
 }
 .submit{
     border-radius: 50%!important;
     background-color: transparent!important;
     color: blue!important;
+    margin-top:10px;
+}
+.edit{
+    border-radius: 100%!important;
+    background-color: transparent!important;
+    color: grey!important;
+    padding: 5px 9px 8px 9px;
+    margin: 5px 10px;
+}
+.badge{
+    background-color:#720026!important;
+    color:white!important;
+    padding: 4px 10px;
 }

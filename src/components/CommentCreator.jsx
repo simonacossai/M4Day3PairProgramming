@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Card, FormControl, Button } from "react-bootstrap";
+import './CommentListItem.css';
 
 class CommentCreator extends React.Component {
 
@@ -36,7 +37,7 @@ class CommentCreator extends React.Component {
         onChange={(e)=>this.setState({rate: e.currentTarget.value})}></FormControl>
         <FormControl value={this.state.comment} 
         onChange={(e)=>this.setState({comment: e.currentTarget.value})}></FormControl>
-        <Button onClick={this.sendComment}>+</Button> 
+        <Button onClick={this.sendComment} className="submit">+</Button> 
             </>
         )
     }
