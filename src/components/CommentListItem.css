@@ -1,0 +1,10 @@
+.delete{
+    border-radius: 50%!important;
+    background-color: transparent!important;
+    color: red!important;
+}
+.submit{
+    border-radius: 50%!important;
+    background-color: transparent!important;
+    color: blue!important;
+}
